@@ -1,7 +1,5 @@
-import React from 'react';
+import React,{useState} from 'react';
 
-
-// questions to dislarm
 let quiz = [
   {
     ask: 'Are reptiles warm or cold blooded',
@@ -13,9 +11,6 @@ let quiz = [
   },
 ]
 
-
-// first setting the time you want to wake up
-// insert alarm and credit the code
 function Alarm(){
   return(
   <h1 className="Alarm">
@@ -24,41 +19,68 @@ function Alarm(){
   )
 }
 
+// export function Question() {
+//   return(
+//     <div className = "questionaire">
+//       {quiz.map(QuizPage)}
+//     </div>
+//   )
+// }
 
-// once the alarm goes off you need to answer a question
-// the page switches and makes sound while you have to answer the question
+export function QuizPage1() {
+  
+    const [input, setInput] = useState();
 
-// linking the disalarm page setup to the quiz information
-export function Question() {
-  return(
-    <div className = "questionaire">
-      {quiz.map(DisalarmPage)}
-    </div>
-  )
-}
+  function handleChange(event){
+    setInput(event.target.value)
+  }
 
-// how the disalrm page looks like once the alarm goes off
-// must insert an answer
-export function DisalarmPage(props) {
-  return(
+  function Handlesubmit(){
+      console.log(input)
+    if (input == quiz[0].answer){
+        return(
+            <Alarm></Alarm>
+            )
+    }else{
+        return(<p></p>)
+    }
+  }
+
+    return(
     <div className= "ask">
       <div className= "ask-question">
-        <h1>{props.ask}</h1>
+        <h1>{quiz[0].ask}</h1>
       </div>
       <div className= "answer-input">
-        <form>
           <label>
               Answer:
-            <input type="text" name="name"/>
+            <input type="text" name="name" onChange={handleChange}/>
           </label>
-            <input type= "submit" value= "submit"/>
-        </form>
+            <input type= "submit" value= "submit" />
+    
       </div>
+      <Handlesubmit />
     </div>
   )
+
 }
 
-// what will happen when you insert the right answer
-// if input == "answer(from quiz)" return buttons page
-// if input = false then change the pull up a pop up saying try again
+export function QuizPage2() {
+    return(
+      <div className= "ask">
+        <div className= "ask-question">
+          <h1>{quiz[1].ask}</h1>
+        </div>
+        <div className= "answer-input">
+          <form>
+            <label>
+                Answer:
+              <input type="text" name="name"/>
+            </label>
+              <input type= "submit" value= "submit"/>
+          </form>
+        </div>
+      </div>
+    )
+  }
 

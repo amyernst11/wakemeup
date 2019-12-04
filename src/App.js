@@ -1,27 +1,16 @@
 import React,{useState} from 'react';
 import './App.css';
-import {DisalarmPage} from './Alarm-quiz'
+import {QuizPage1} from './Alarm-quiz'
 
 
-
-// need to set up the pathways maybe?????
-
-
-
-// the first function to run the App
 function App() {
   return (
-   <body>
-     <DisalarmPage></DisalarmPage>
-   </body>
+   <div>
+     <QuizPage1></QuizPage1>
+   </div>
   )
 }
 
-
-
-
-
-// buttons for waking up (disalarming) and snoozing
 
 
 // (for disalarm)
@@ -38,8 +27,15 @@ function Buttons() {
     setPress(press +1);
   }
 
-  if (press===1){
-    return
+  if (press<2){
+    return(
+      <Snooze></Snooze>
+    )
+  }
+  if (press>=2){
+    return(
+      <WakeUp></WakeUp>
+    )
   }
 }
 
@@ -75,9 +71,9 @@ function Buttons() {
 // insert automated set time and credit code
 function Snooze(){
   return(
-    <body>
+    <div>
       Sleep for 5 more minutes
-    </body>
+    </div>
   )
 }
 
@@ -89,9 +85,9 @@ function Snooze(){
 // insert the spotify plug in here and credit code
 function WakeUp(){
   return(
-    <body>
+    <div>
       Pick a playlist to wake up to.
-    </body>
+    </div>
   )
 }
 
