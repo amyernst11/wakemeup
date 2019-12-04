@@ -74,7 +74,11 @@ function Buttons() {
 // when you press snooze, it should give you a time remaining/ countdown until a second alarm goes off
 // insert automated set time and credit code
 function Snooze(){
-
+  return(
+    <body>
+      Sleep for 5 more minutes
+    </body>
+  )
 }
 
 // then after the coundtown timer finishes, it should link back to the disalarm page
@@ -84,7 +88,11 @@ function Snooze(){
 // after the third time you press the snooze button, it will automatically take you to this page
 // insert the spotify plug in here and credit code
 function WakeUp(){
-  
+  return(
+    <body>
+      Pick a playlist to wake up to.
+    </body>
+  )
 }
 
 export default App;

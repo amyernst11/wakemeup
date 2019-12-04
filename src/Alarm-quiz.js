@@ -29,7 +29,7 @@ function Alarm(){
 // the page switches and makes sound while you have to answer the question
 
 // linking the disalarm page setup to the quiz information
-function Question() {
+export function Question() {
   return(
     <div className = "questionaire">
       {quiz.map(DisalarmPage)}
