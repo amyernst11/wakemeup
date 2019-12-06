@@ -1,24 +1,49 @@
 import React,{useState} from 'react';
 import './App.css';
-import {QuizPage1} from './Alarm-quiz'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
+import {QuizPage1} from './Alarm-quiz';
+
 
 
 function App() {
   return (
-   <div>
-     <QuizPage1></QuizPage1>
-   </div>
+   <Router>
+     <div>
+     <Switch>
+       <Route exact path="/">
+         <Alarm></Alarm>
+       </Route>
+       <Route exact path="/quiz">
+         <QuizPage1></QuizPage1>
+       </Route>
+       <Route exact path="/wakeup">
+         <WakeUp></WakeUp>
+       </Route>
+       <Route exact path="/snooze">
+         <Snooze></Snooze>
+       </Route>
+     </Switch>
+    </div>
+   </Router>
   )
 }
 
 
-
-// (for disalarm)
-// if press === 1 then take you to wakeup page
-// (for snooze)
-// if press === 1 then take you to snooze page
-// if press === 2 then take you to snooze page
-// if press === 3 then take you to wakeup page
+function Alarm(){
+  return(
+  <div>
+  <h1 className="Alarm">
+    Alarm
+  </h1>
+  <Link to="/quiz"> <button>Next Page</button> </Link>
+  </div>
+  )
+}
 
 function Buttons() {
   const [press, setPress] = useState(0);
@@ -66,9 +91,6 @@ function Buttons() {
 // }
 // }
 
-
-// when you press snooze, it should give you a time remaining/ countdown until a second alarm goes off
-// insert automated set time and credit code
 function Snooze(){
   return(
     <div>
@@ -77,12 +99,6 @@ function Snooze(){
   )
 }
 
-// then after the coundtown timer finishes, it should link back to the disalarm page
-
-
-// once you press the wake up button, it will take you to this page where music starts playing
-// after the third time you press the snooze button, it will automatically take you to this page
-// insert the spotify plug in here and credit code
 function WakeUp(){
   return(
     <div>

@@ -1,4 +1,10 @@
 import React,{useState} from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
 
 let quiz = [
   {
@@ -11,13 +17,6 @@ let quiz = [
   },
 ]
 
-function Alarm(){
-  return(
-  <h1 className="Alarm">
-    Alarm
-  </h1>
-  )
-}
 
 // export function Question() {
 //   return(
@@ -39,7 +38,11 @@ export function QuizPage1() {
       console.log(input)
     if (input == quiz[0].answer){
         return(
-            <Alarm></Alarm>
+          <div>
+            <p>correct</p>
+            <Link to="/snooze"> <button>Snooze</button></Link>
+            <Link to="/wakeup"> <button>Wake up</button></Link>
+            </div>
             )
     }else{
         return(<p></p>)
@@ -60,6 +63,7 @@ export function QuizPage1() {
     
       </div>
       <Handlesubmit />
+
     </div>
   )
 
