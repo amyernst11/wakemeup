@@ -5,6 +5,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import './App.css';
 
 let quiz = [
   {
@@ -16,15 +17,6 @@ let quiz = [
     answer: 'south pole'
   },
 ]
-
-
-// export function Question() {
-//   return(
-//     <div className = "questionaire">
-//       {quiz.map(QuizPage)}
-//     </div>
-//   )
-// }
 
 export function QuizPage1() {
   
@@ -70,21 +62,44 @@ export function QuizPage1() {
 }
 
 export function QuizPage2() {
+  
+  const [input, setInput] = useState();
+
+  function handleChange(event){
+    setInput(event.target.value)
+  }
+
+  function Handlesubmit(){
+      console.log(input)
+    if (input == quiz[1].answer){
+        return(
+          <div>
+            <p>correct</p>
+            <Link to="/forcewake"> <button>Snooze</button></Link>
+            <Link to="/wakeup"> <button>Wake up</button></Link>
+            </div>
+            )
+    }else{
+        return(<p></p>)
+    }
+  }
+
     return(
-      <div className= "ask">
-        <div className= "ask-question">
-          <h1>{quiz[1].ask}</h1>
-        </div>
-        <div className= "answer-input">
-          <form>
-            <label>
-                Answer:
-              <input type="text" name="name"/>
-            </label>
-              <input type= "submit" value= "submit"/>
-          </form>
-        </div>
+    <div className= "ask">
+      <div className= "ask-question">
+        <h1>{quiz[1].ask}</h1>
       </div>
-    )
+      <div className= "answer-input">
+          <label>
+              Answer:
+            <input type="text" name="name" onChange={handleChange}/>
+          </label>
+            <input type= "submit" value= "submit" />
+    
+      </div>
+      <Handlesubmit />
+
+    </div>
+  )
   }
 

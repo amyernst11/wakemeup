@@ -7,6 +7,7 @@ import {
   Link,
 } from "react-router-dom";
 import {QuizPage1} from './Alarm-quiz';
+import {QuizPage2} from './Alarm-quiz';
 
 
 
@@ -21,11 +22,17 @@ function App() {
        <Route exact path="/quiz">
          <QuizPage1></QuizPage1>
        </Route>
+       <Route exact path="/quiz2">
+         <QuizPage2></QuizPage2>
+       </Route>
        <Route exact path="/wakeup">
          <WakeUp></WakeUp>
        </Route>
        <Route exact path="/snooze">
          <Snooze></Snooze>
+       </Route>
+       <Route exact path="/forcewake">
+         <ForceWake></ForceWake>
        </Route>
      </Switch>
     </div>
@@ -45,56 +52,14 @@ function Alarm(){
   )
 }
 
-function Buttons() {
-  const [press, setPress] = useState(0);
-
-  function handleClick() {
-    setPress(press +1);
-  }
-
-  if (press<2){
-    return(
-      <Snooze></Snooze>
-    )
-  }
-  if (press>=2){
-    return(
-      <WakeUp></WakeUp>
-    )
-  }
-}
-
-// function ExampleInteraction() {
-//   // Declare a new state variable, which we'll call "count"
-//   const [count, setCount] = useState(0);
-//   // let badCount=0;
-//   // temporary value
-
-//   function handleClick() {
-//     setCount(count + 1);
-//     // badCount = badCount + 1;
-//   } 
-
-//   if(count > 100) {
-//     return 
-//   } else {
-//     return (
-//     <div>
-//       <p>Do NOT click 100 times, please</p>
-//       <p>You clicked {count} times</p>
-//       {/* <p>You clicked badCount= {badCount} times</p> */}
-//       <button className="hotbutton" onClick={handleClick}>
-//         Click me
-//       </button>
-//     </div>
-//   );
-// }
-// }
 
 function Snooze(){
   return(
     <div>
-      Sleep for 5 more minutes
+      <h1>
+      Sleep for 5 more minutes      
+      </h1>
+      <Link to="/quiz2"> <button>Next Page</button> </Link>
     </div>
   )
 }
@@ -103,6 +68,14 @@ function WakeUp(){
   return(
     <div>
       Pick a playlist to wake up to.
+    </div>
+  )
+}
+
+function ForceWake(){
+  return(
+    <div>
+      Get out of bed you lazy bum!
     </div>
   )
 }
