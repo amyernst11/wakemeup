@@ -45,8 +45,9 @@ function App() {
 }
 
 
-// function Alarm(){
-  
+
+// I got this code from a user named Violet Forest at the url: https://codepen.io/violetforest/pen/KyVQpg  
+// This person made the Alarm Clock I am using for my first page
 class AlarmClock extends React.Component {
   constructor() {
     super();
@@ -164,19 +165,19 @@ function WakeUp(){
     <div>
       <h3>Pick a playlist to wake up to.</h3>
       <SpotifyPlayer
-        uri="spotify:album:1TIUsv8qmYLpBEhvmBmyBk"
+        uri="spotify:playlist:37i9dQZF1DWSXBu5naYCM9"
         size={'large'}
         view={'view'}
         theme={'balck'}
         />
         <SpotifyPlayer
-        uri="spotify:album:1TIUsv8qmYLpBEhvmBmyBk"
+        uri="spotify:playlist:37i9dQZF1DWSV3Tk4GO2fq"
         size={'large'}
         view={'view'}
         theme={'balck'}
         />
         <SpotifyPlayer
-        uri="spotify:album:1TIUsv8qmYLpBEhvmBmyBk"
+        uri="spotify:playlist:37i9dQZF1DWU13kKnk03AP"
         size={'large'}
         view={'view'}
         theme={'balck'}
@@ -190,7 +191,19 @@ function ForceWake(){
     <div>
       <h3>Get out of bed you lazy bum!</h3>
       <SpotifyPlayer
-        uri="spotify:album:1TIUsv8qmYLpBEhvmBmyBk"
+        uri="spotify:playlist:37i9dQZF1DWSXBu5naYCM9"
+        size={'large'}
+        view={'view'}
+        theme={'balck'}
+        />
+        <SpotifyPlayer
+        uri="spotify:playlist:37i9dQZF1DWSV3Tk4GO2fq"
+        size={'large'}
+        view={'view'}
+        theme={'balck'}
+        />
+        <SpotifyPlayer
+        uri="spotify:playlist:37i9dQZF1DWU13kKnk03AP"
         size={'large'}
         view={'view'}
         theme={'balck'}
