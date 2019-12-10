@@ -109,8 +109,8 @@ class AlarmClock extends React.Component {
       (this.state.ringAlarm) ?
       <Redirect  to="/quiz"/>
       : 
-      <div>
-        <h1>React Alarm Clock</h1>
+      <div className="alarmPage">
+        <h1>Alarm Clock</h1>
         <h2>It is {this.state.currentTime}.
         </h2>
         <h2>{this.alarmMessage}
@@ -150,8 +150,8 @@ function Snooze(){
 const Completionist = () => {return <Redirect to="/quiz2"/>};
 
   return(
-      <div>
-        <h3>You can sleep for 5 more minutes.</h3>
+      <div className="snooze">
+        <h1>You can sleep for 5 more minutes.</h1>
       <Countdown date={Date.now() + 5000}>
         <Completionist/>
       </Countdown>
@@ -162,8 +162,8 @@ const Completionist = () => {return <Redirect to="/quiz2"/>};
 
 function WakeUp(){
   return(
-    <div>
-      <h3>Pick a playlist to wake up to.</h3>
+    <div className="wakeUp">
+      <h1>Pick a playlist to wake up to.</h1>
       <SpotifyPlayer
         uri="spotify:playlist:37i9dQZF1DWSXBu5naYCM9"
         size={'large'}
@@ -188,8 +188,8 @@ function WakeUp(){
 
 function ForceWake(){
   return(
-    <div>
-      <h3>Get out of bed you lazy bum!</h3>
+    <div className="forceWake">
+      <h1>Get out of bed you lazy bum!</h1>
       <SpotifyPlayer
         uri="spotify:playlist:37i9dQZF1DWSXBu5naYCM9"
         size={'large'}

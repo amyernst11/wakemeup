@@ -1,0 +1,53 @@
+.alarmPage{
+    display: block;
+    align-items: center;
+    text-align: center;
+    margin-top: 12%;
+    background-color: cornflowerblue;
+    padding-bottom: 20px;
+    padding-top: 1px;
+}
+
+.ask{
+    display: block;
+    align-items: center;
+    text-align: center;
+    margin-top: 12%;
+    background-color: salmon;
+    padding-bottom: 15px;
+    padding-top: 1px;
+}
+
+.snooze{
+    display: block;
+    align-items: center;
+    text-align: center;
+    margin-top: 12%;
+    background-color: rgb(234, 91, 253);
+    padding-bottom: 15px;
+    padding-top: 1px;
+}
+
+.wakeUp{
+    display: block;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(92, 243, 205);
+    padding-bottom: 200px;
+    padding-top: 2px;
+    
+}
+
+.forceWake{
+    display: block;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(255, 228, 107);
+    padding-bottom: 200px;
+    padding-top: 2px;
+    
+}
+
+.alarmsound{
+    margin-top: 20px;
+}

@@ -5,6 +5,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import ReactAudioPlayer from 'react-audio-player';
 import './App.css';
 
 let quiz = [
@@ -52,10 +53,15 @@ export function QuizPage1() {
             <input type="text" name="name" onChange={handleChange}/>
           </label>
             <input type= "submit" value= "submit" />
-    
+      </div>
+      <div className="alarmsound">    
+          <ReactAudioPlayer
+            src="alarmsound.mp3"
+            autoPlay
+            controls
+            />
       </div>
       <Handlesubmit />
-
     </div>
   )
 
@@ -96,6 +102,13 @@ export function QuizPage2() {
           </label>
             <input type= "submit" value= "submit" />
     
+      </div>
+      <div className="alarmsound">    
+          <ReactAudioPlayer
+            src="alarmsound.mp3"
+            autoPlay
+            controls
+            />
       </div>
       <Handlesubmit />
 
