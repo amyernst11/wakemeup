@@ -8,6 +8,7 @@ import {
 import ReactAudioPlayer from 'react-audio-player';
 import './App.css';
 
+// quiz information in array/object
 let quiz = [
   {
     ask: 'Are reptiles warm or cold blooded',
@@ -19,8 +20,10 @@ let quiz = [
   },
 ]
 
+// first quiz page after the alarm goes off
+// must input the correct answer for the snooze/wake up buttons show up
 export function QuizPage1() {
-  
+    
     const [input, setInput] = useState();
 
   function handleChange(event){
@@ -42,6 +45,7 @@ export function QuizPage1() {
     }
   }
 
+  // adding an alarm sound to the page, hopefully it is autoplay
     return(
     <div className= "ask">
       <div className= "ask-question">
@@ -67,6 +71,10 @@ export function QuizPage1() {
 
 }
 
+// when you press the snooze button, it takes you to the second quiz page with a different quesiton
+// when you input the right answer then the button shows up
+// the difference with this page is that the snooze button will take you to a wake up page that 
+// "forces" you out of bed because you are only allowed one snooze
 export function QuizPage2() {
   
   const [input, setInput] = useState();
@@ -90,6 +98,7 @@ export function QuizPage2() {
     }
   }
 
+  // adding alarm sound, hopefully which autoplays
     return(
     <div className= "ask">
       <div className= "ask-question">

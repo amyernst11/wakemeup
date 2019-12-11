@@ -15,6 +15,8 @@ import {QuizPage1} from './Alarm-quiz';
 import {QuizPage2} from './Alarm-quiz';
 
 
+// this app routes all the pages so then in the other functions I can link the pages in
+// using the router from react library
 function App() {
   return (
    <Router>
@@ -48,6 +50,7 @@ function App() {
 
 // I got this code from a user named Violet Forest at the url: https://codepen.io/violetforest/pen/KyVQpg  
 // This person made the Alarm Clock I am using for my first page
+// you set the time and then when the alarm goes off it will take you to the first quiz page
 class AlarmClock extends React.Component {
   constructor() {
     super();
@@ -104,6 +107,7 @@ class AlarmClock extends React.Component {
     }   
   }
 
+// using redirect to change pages after the timer goes off, from react library
   render() {
     return (
       (this.state.ringAlarm) ?
@@ -123,6 +127,7 @@ class AlarmClock extends React.Component {
   }
 }
 
+// (extra code from the alarm code I found, but ended up not needing)
 // return(
 // ReactDOM.render(
 //   (
@@ -133,18 +138,11 @@ class AlarmClock extends React.Component {
 //   )    
 // );
   
-  
-  // return(
-  // <div>
-  // <h1 className="Alarm">
-  //   Alarm
-  // </h1>
-  // <Link to="/quiz"> <button>Next Page</button> </Link>
-  // </div>
-  // )
-//}
 
-
+// this snooze page allows you to sleeep for 5 more minutes, 
+// but in this case of showing the app it will be 5 seconds
+// using the countdown from react library
+// using redirect to change pages after timer is done, also from react library
 function Snooze(){
   
 const Completionist = () => {return <Redirect to="/quiz2"/>};
@@ -160,6 +158,9 @@ const Completionist = () => {return <Redirect to="/quiz2"/>};
   
 }
 
+// when you press the wake up button instead of the snooze button, you will be able to choose what
+// spotify playlist you want to listen to as you get ready for the day
+// using the spotify player from the react library
 function WakeUp(){
   return(
     <div className="wakeUp">
@@ -186,6 +187,10 @@ function WakeUp(){
   )
 }
 
+// after one snooze, on the second time you press snooze you have to wake up
+// right now you can choose a spotify playlist to listen to as you get up
+// but ideally this page would autoplay the music so it is not quiet to go back to bed
+// using the spotify player from react library
 function ForceWake(){
   return(
     <div className="forceWake">
